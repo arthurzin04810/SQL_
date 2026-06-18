@@ -38,4 +38,4 @@ CREATE TABLE IF NOT EXISTS movimento(
     produto_id INTEGER NOT NULL,
     valor_movimento INTEGER NOT NULL,
     PRIMARY KEY (movimento_id, produto_id),
-    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+    FOREIGN KEY (cliente_id) REFERENCES produtos(id)
