@@ -13,9 +13,9 @@ CREATE TABLE IF NOT EXISTS clientes (
 
 -- Tabela de Produtos
 CREATE TABLE IF NOT EXISTS produtos (
-    id_produto INTEGER PRIMARY KEY AUTOINCREMENT,
+    produto_id INTEGER PRIMARY KEY AUTOINCREMENT,
     descrição_produto TEXT NOT NULL,
-    valor_produto REAL NOT NULL CHECK(valor >= 0),
+    valor_produto REAL NOT NULL CHECK(valor_produto >= 0),
     id_fornecedor INTEGER NOT NULL DEFAULT 0
 );
 
@@ -23,19 +23,23 @@ CREATE TABLE IF NOT EXISTS produtos (
 CREATE TABLE IF NOT EXISTS fornecedor (
     id_fornecedor INTEGER PRIMARY KEY AUTOINCREMENT,
     fornecedor_CNPJ INTEGER NOT NULL UNIQUE,
-    fornecedor telefone TEXT NOT NULL UNIQUE,
+    fornecedor_telefone TEXT NOT NULL UNIQUE,
     fornecedor_nome TEXT NOT NULL UNIQUE,
     fornecedor_CEP TEXT NOT NULL,
     forneedor_estado TEXT NOT NULL,
     fornecedor_cidade TEXT NOT NULL,
-    fornecedor_bairro TEXT NOT NULL,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id_cliente) ON DELETE CASCADE
+    fornecedor_bairro TEXT NOT NULL
 );
 
--- Tabela de Itens do movimento (Relação Muitos para Muitos)
-CREATE TABLE IF NOT EXISTS movimento(
-    movimento_id INTEGER NOT NULL,
-    produto_id INTEGER NOT NULL,
-    valor_movimento INTEGER NOT NULL,
-    PRIMARY KEY (movimento_id, produto_id),
-    FOREIGN KEY (cliente_id) REFERENCES produtos(id)
+-- Tabela de Itens do movimento 
+CREATE TABLE IF NOT EXISTS movimento (
+  movimento_id TEXT NOT NULL UNIQUE,
+  movimento_produto INTEGER TEXT NOT NULL,
+  movimento_valor INTEGER TEXT NOT NULL,
+  movimento_desc INTEGER TEXT NOT NULL,
+      PRIMARY KEY (movimento_id, produto_id),
+    FOREIGN KEY (movimento_id) REFERENCES movimento(movimento_id) ON DELETE CASCADE,
+    FOREIGN KEY (produto_id) REFERENCES produtos(produto_id)
+  
+);
+
