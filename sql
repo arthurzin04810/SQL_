@@ -1,22 +1,21 @@
+SELECT * FROM demo;
 -- Tabela de Clientes
 CREATE TABLE IF NOT EXISTS clientes (
-    id_cliente INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome_cliente TEXT NOT NULL,
-    email_cliente TEXT NOT NULL UNIQUE,
-    telefone_cliente TEXT NOT NULL UNIQUE,
-    CEPcl_iente TEXT not NULL,
-    estado_cliente TEXT NOT NULL,
-    cidade_cliente TEXT NOT NULL,
-    bairro_cliente TEXT NOT NULL,
-    data_cadastro TEXT DEFAULT CURRENT_TIMESTAMP
+cliente_id INTEGER PRIMARY KEY AUTOINCREMENT,
+cliente_telefone TEXT NOT NULL,
+cliente_nome TEXT NOT NULL,
+cliente_bairro TEXT NOT NULL,
+cliente_cidade TEXT NOT NULL,
+cliente_estado TEXT NOT NULL,
+cliente_cep TEXT NOT NULL,
+cliente_email TEXT NOT NULL UNIQUE
 );
 
 -- Tabela de Produtos
 CREATE TABLE IF NOT EXISTS produtos (
-    produto_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    descrição_produto TEXT NOT NULL,
-    valor_produto REAL NOT NULL CHECK(valor_produto >= 0),
-    id_fornecedor INTEGER NOT NULL DEFAULT 0
+produto_id INTEGER PRIMARY KEY AUTOINCREMENT,
+produto_descricao,
+produto_valor
 );
 
 
