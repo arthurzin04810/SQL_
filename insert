@@ -1,0 +1,4 @@
+INSERT into clientes(cliente_telefone, cliente_nome, cliente_bairro, cliente_cidade, cliente_estado, cliente_cep, cliente_email)
+VALUES
+('45998480808', 'Luis', 'Vila Adriana', 'Foz do Iguaçu', 'Paraná', '8446322', 'luiseduardochupz@gmail.com');
+
