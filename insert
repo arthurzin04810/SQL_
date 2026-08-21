@@ -1,8 +1,12 @@
 INSERT into clientes(cliente_telefone, cliente_nome, cliente_bairro, cliente_cidade, cliente_estado, cliente_cep, cliente_email)
 VALUES
 ('45998480808', 'Luis', 'Vila Adriana', 'Foz do Iguaçu', 'Paraná', '8446322', 'luiseduardochupz@gmail.com');
-INSERT INTO produtos(produto_descricao, produto_valor)
+INSERT INTO produtos(produto_descricao, produto_valor, produto_unidade)
 VALUES
-('bola de futebol','R$ 100,00');
-INSERT INTO movimento(movimento_produto, movimento_data, movimento_tipO)
-('chuteira', '20/08/2026', 'venda');
+('bola de futebol','R$ 100,00', 'unidade');
+INSERT INTO movimento(movimento_produto, movimento_valor)
+VALUES
+('20/08/2026', 'R$ 100,00');
+INSERT INTO item_movimento(item_numero, item_quantdade, item_desconto, item_valor)
+VALUES
+('1', '1', '10%', 'R$ 90,00')
