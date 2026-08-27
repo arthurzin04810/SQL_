@@ -1,4 +1,3 @@
-SELECT * FROM demo;
 -- Tabela de Clientes
 CREATE TABLE IF NOT EXISTS clientes (
 cliente_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -25,7 +24,7 @@ movimento_id INTEGER PRIMARY KEY,
 cliente_id INTEGER NOT NULL,
 movimento_data TEXT NOT NULL,
 movimento_valor INTEGER NOT NULL,
-FOREIGN  KEY(cliente_id) REFERENCES clientes(id) ON DELETE CASCADE
+FOREIGN KEY(cliente_id) REFERENCES clientes(id) ON DELETE CASCADE
 );
 -- Tabela de Itens do produto do movimento
 CREATE TABLE IF NOT EXISTS item_movimento(
