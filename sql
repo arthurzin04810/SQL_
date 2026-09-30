@@ -1,4 +1,3 @@
-
 -- Tabela de Clientes
 CREATE TABLE IF NOT EXISTS clientes (
     cliente_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -17,9 +16,11 @@ CREATE TABLE IF NOT EXISTS clientes (
 -- Tabela de Produtos 
 CREATE TABLE IF NOT EXISTS produtos (
     produto_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    produto_descricao TEXT NOT NULL,
-    produto_valor REAL NOT NULL,
-    produto_unidade TEXT NOT NULL
+    produto_nome TEXT NOT NULL,
+    produto_categoria TEXT NOT NULL,
+    produto_preco REAL NOT NULL,
+    produto_estoque INTEGER NOT NULL, 
+    produto_descricao TEXT NOT NULL           
 );
 
 -- Tabela de Itens do movimento 
