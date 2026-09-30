@@ -6,7 +6,9 @@ cliente_telefone TEXT NOT NULL,
 cliente_nome TEXT NOT NULL,
 cliente_bairro TEXT NOT NULL,
 cliente_cidade TEXT NOT NULL,
-cliente_estado TEXT NOT NULL,
+cliente_uf TEXT NOT NULL,
+cliente_logradouro TEXT NOT NULL,
+cliente_numero_residencia TEXT NOT NULL,
 cliente_cep TEXT NOT NULL,
 cliente_email TEXT NOT NULL UNIQUE
 );
@@ -35,6 +37,6 @@ CREATE TABLE IF NOT EXISTS item_movimento(
  item_quantdade INTEGER not NULL,
  item_desconto INTEGER not NULL,
  item_valor INTEGER not NULL,
- FOREIGN KEY(movimento_id) REFERENCES movimento(id) ON DELETE CASCADE,
- FOREIGN KEY(produto_id) REFERENCES produtos(id) ON DELETE CASCADE
+ FOREIGN KEY(movimento_id) REFERENCES movimento(movimento_id) ON DELETE CASCADE,
+ FOREIGN KEY(produto_id) REFERENCES produtos(produto_id) ON DELETE CASCADE
 );
