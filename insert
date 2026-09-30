@@ -1,4 +1,4 @@
--- 1. Inserindo o Cliente (Gera o cliente_id = 1)
+
 INSERT INTO clientes(cliente_cpf, cliente_telefone, cliente_nome, cliente_bairro, cliente_cidade, cliente_uf, cliente_logradouro, cliente_numero_residencia, cliente_cep, cliente_email)
 VALUES ('68732086040','45998480808', 'Luis', 'Vila Adriana', 'Foz do Iguaçu', 'Paraná', 'av. Ayrtonn Senna','2911', '8446322', 'luiseduardochupz@gmail.com');
 
