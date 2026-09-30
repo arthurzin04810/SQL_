@@ -1,15 +1,14 @@
-INSERT into clientes(cliente_cpf, cliente_telefone, cliente_nome, cliente_bairro, cliente_cidade, cliente_uf,cliente_logradouro, cliente_numero_residencia, cliente_cep, cliente_email)
-VALUES
-('68732086040','45998480808', 'Luis', 'Vila Adriana', 'Foz do Iguaçu', 'Paraná', 'av. Ayrtonn Senna','2911', '8446322', 'luiseduardochupz@gmail.com');
-INSERT INTO produtos(produto_descricao, produto_valor, produto_unidade)
-VALUES
-('bola de futebol','R$ 100,00', 'unidade');
-INSERT INTO movimento(movimento_data, movimento_valor)
-VALUES
-('20/08/2026', 'R$ 100,00');
-INSERT INTO item_movimento(item_numero, item_quantdade, item_desconto, item_valor)
-VALUES
-('1', '1', '10%', 'R$ 90,00')
+-- 1. Inserindo o Cliente (Gera o cliente_id = 1)
+INSERT INTO clientes(cliente_cpf, cliente_telefone, cliente_nome, cliente_bairro, cliente_cidade, cliente_uf, cliente_logradouro, cliente_numero_residencia, cliente_cep, cliente_email)
+VALUES ('68732086040','45998480808', 'Luis', 'Vila Adriana', 'Foz do Iguaçu', 'Paraná', 'av. Ayrtonn Senna','2911', '8446322', 'luiseduardochupz@gmail.com');
 
-SELECT * 
-FROM clientes;
+INSERT INTO produtos(produto_descricao, produto_valor, produto_unidade)
+VALUES ('bola de futebol', 100.00, 'unidade'); -- Apenas o número, sem 'R$'
+
+INSERT INTO movimento(cliente_id, movimento_data, movimento_valor)
+VALUES (1, '20/08/2026', 100.00); 
+
+INSERT INTO item_movimento(movimento_id, produto_id, item_numero, item_quantidade, item_desconto, item_valor)
+VALUES (1, 1, 1, 1, 10.0, 90.00);
+
+SELECT * FROM clientes;
