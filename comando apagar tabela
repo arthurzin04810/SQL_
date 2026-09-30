@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS item_movimento;
+DROP TABLE IF EXISTS movimento;
+DROP TABLE IF EXISTS produtos;
+DROP TABLE IF EXISTS clientes;
